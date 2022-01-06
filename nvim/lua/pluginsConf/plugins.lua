@@ -50,8 +50,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
-  use "lukas-reineke/indent-blankline.nvim" --TODO keep or not ?
-  use "goolord/alpha-nvim"
+  use "lukas-reineke/indent-blankline.nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
 
