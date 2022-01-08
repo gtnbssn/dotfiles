@@ -96,7 +96,12 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- rest.nvim
-  use "NTBBloodbath/rest.nvim"
+  use {
+    "NTBBloodbath/rest.nvim",
+    config = function ()
+      require("rest-nvim").setup()
+    end
+  }
 
   -- scnvim
   use {
