@@ -32,7 +32,7 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  foldlevel = 42,
+  foldlevel = 4,
 }
 
 vim.opt.shortmess:append "c"
