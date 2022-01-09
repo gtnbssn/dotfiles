@@ -20,4 +20,10 @@ configs.setup {
     enable = true,
     enable_autocmd = false,
   },
+  autotag = {
+    enable = true,
+  }
 }
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
