@@ -12,16 +12,29 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
-	colored = false,
+	colored = true,
 	update_in_insert = false,
 	always_visible = true,
 }
 
+-- use gitsigns as the source for diff so that both are in sync: https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#using-external-source-for-diff
+local function diff_source()
+  local gitsigns = vim.b.gitsigns_status_dict
+  if gitsigns then
+    return {
+      added = gitsigns.added,
+      modified = gitsigns.changed,
+      removed = gitsigns.removed
+    }
+  end
+end
+
 local diff = {
 	"diff",
-	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	colored = true,
+	symbols = { added = "+", modified = "≠", removed = "-" }, -- changes diff symbols
+  cond = hide_in_width,
+  source = diff_source
 }
 
 local mode = {
@@ -37,8 +50,9 @@ local filetype = {
 --	icon = nil,
 }
 
+-- use gitsigns for branch name too:  https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#using-external-source-for-branch
 local branch = {
-	"branch",
+	"b:gitsigns_head",
 	icons_enabled = true,
 	icon = "",
 }
@@ -72,9 +86,9 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
-		lualine_c = {},
+		lualine_a = { branch},
+		lualine_b = { diagnostics, mode },
+		lualine_c = { "filename" },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
