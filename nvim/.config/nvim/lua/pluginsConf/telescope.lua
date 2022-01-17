@@ -5,8 +5,6 @@ end
 
 local actions = require "telescope.actions"
 
-telescope.load_extension('fzf')
-
 telescope.setup {
   defaults = {
 
@@ -96,3 +94,5 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+telescope.load_extension('fzf')
