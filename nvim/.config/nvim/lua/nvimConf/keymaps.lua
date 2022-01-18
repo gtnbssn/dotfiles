@@ -53,12 +53,6 @@ keymap('n', 'N', 'Nzzzv', opts)
 keymap("n", "vs", ":vs<CR>", opts)
 keymap("n", "sp", ":sp<CR>", opts)
 
--- easier tabs
-keymap('n', 'tn', ':tabnew<CR>', opts)
-keymap('n', 'tk', ':tabnext<CR>', opts)
-keymap('n', 'tj', ':tabprev<CR>', opts)
-keymap('n', 'to', ':tabonly<CR>', opts)
-
 ------------
 -- Visual --
 ------------
