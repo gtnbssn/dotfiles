@@ -12,10 +12,10 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({
-        prefer_local = "node_modules/.bin",
-    }),
+			prefer_local = "node_modules/.bin",
+		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-    -- diagnostics.flake8
+		-- diagnostics.flake8
 	},
 })

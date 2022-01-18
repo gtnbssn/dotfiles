@@ -19,35 +19,35 @@ local diagnostics = {
 
 -- use gitsigns as the source for diff so that both are in sync: https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#using-external-source-for-diff
 local function diff_source()
-  local gitsigns = vim.b.gitsigns_status_dict
-  if gitsigns then
-    return {
-      added = gitsigns.added,
-      modified = gitsigns.changed,
-      removed = gitsigns.removed
-    }
-  end
+	local gitsigns = vim.b.gitsigns_status_dict
+	if gitsigns then
+		return {
+			added = gitsigns.added,
+			modified = gitsigns.changed,
+			removed = gitsigns.removed,
+		}
+	end
 end
 
 local diff = {
 	"diff",
 	colored = true,
 	symbols = { added = "+", modified = "≠", removed = "-" }, -- changes diff symbols
-  cond = hide_in_width,
-  source = diff_source
+	cond = hide_in_width,
+	source = diff_source,
 }
 
 local mode = {
 	"mode",
---	fmt = function(str)
---		return "-- " .. str .. " --"
---	end,
+	--	fmt = function(str)
+	--		return "-- " .. str .. " --"
+	--	end,
 }
 
 local filetype = {
 	"filetype",
 	icons_enabled = true,
---	icon = nil,
+	--	icon = nil,
 }
 
 -- use gitsigns for branch name too:  https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#using-external-source-for-branch
@@ -80,8 +80,8 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
-		component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "toggleterm" },
 		always_divide_middle = true,
 	},

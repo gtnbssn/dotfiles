@@ -17,9 +17,9 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- easy way out
-keymap('i', 'ù', '<Esc>', opts)
-keymap('v', 'ù', '<Esc>', opts)
-keymap('c', 'ù', '<C-C>', opts)
+keymap("i", "ù", "<Esc>", opts)
+keymap("v", "ù", "<Esc>", opts)
+keymap("c", "ù", "<C-C>", opts)
 
 ------------
 -- Normal --
@@ -46,8 +46,8 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- keep things centered when searching
-keymap('n', 'n', 'nzzzv', opts)
-keymap('n', 'N', 'Nzzzv', opts)
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
 
 -- quick splits
 keymap("n", "vs", ":vs<CR>", opts)
