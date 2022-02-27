@@ -5,8 +5,8 @@ end
 
 toggleterm.setup({
 	size = 20,
-	open_mapping = [[<c-a>]],
-	hide_numbers = true,
+  open_mapping = [[<A-t>]],
+  hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
 	shading_factor = 2,
