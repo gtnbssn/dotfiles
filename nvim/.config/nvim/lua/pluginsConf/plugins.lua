@@ -106,6 +106,8 @@ return packer.startup(function(use)
 		end,
 	})
 
+  use("Glench/Vim-Jinja2-Syntax")
+
 	-- scnvim
 	use({
 		"davidgranstrom/scnvim",
