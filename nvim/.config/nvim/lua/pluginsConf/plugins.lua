@@ -55,7 +55,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 
 	-- Colorschemes
-	use("gruvbox-community/gruvbox")
+  use {"ellisonleao/gruvbox.nvim"}
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
