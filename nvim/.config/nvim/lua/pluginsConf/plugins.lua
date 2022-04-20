@@ -92,6 +92,10 @@ return packer.startup(function(use)
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
+		config = function()
+			local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+			ft_to_parser.astro = "tsx"
+		end,
 	})
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
@@ -106,7 +110,7 @@ return packer.startup(function(use)
 		end,
 	})
 
-  use("Glench/Vim-Jinja2-Syntax")
+	use("Glench/Vim-Jinja2-Syntax")
 
 	-- scnvim
 	use({
