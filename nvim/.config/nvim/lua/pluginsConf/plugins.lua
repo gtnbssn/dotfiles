@@ -44,7 +44,7 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-	use({"numToStr/Comment.nvim", tag = "v0.6"}) -- Easily comment stuff
+	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 	use("moll/vim-bbye")
@@ -55,8 +55,8 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 
 	-- Colorschemes
--- 	use({ "ellisonleao/gruvbox.nvim" })
-	use({ "gruvbox-community/gruvbox" })
+	use({ "ellisonleao/gruvbox.nvim" })
+	-- use({ "gruvbox-community/gruvbox" })
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -111,7 +111,7 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use("Glench/Vim-Jinja2-Syntax")
+	-- use("Glench/Vim-Jinja2-Syntax")
 
 	-- scnvim
 	use({
