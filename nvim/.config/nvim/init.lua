@@ -21,4 +21,5 @@ require "pluginsConf.indentline"
 -- require "pluginsConf.alpha"
 require "pluginsConf.whichkey"
 require "pluginsConf.truezen"
+require "pluginsConf.lightspeed"
 -- trouble?
