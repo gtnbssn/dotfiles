@@ -66,7 +66,7 @@ return packer.startup(function(use)
   use("lukas-reineke/indent-blankline.nvim")
 	require("pluginsConf.indentline")
 
-  use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
+  -- use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 
   use("folke/which-key.nvim")
 	require("pluginsConf.whichkey")
