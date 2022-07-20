@@ -1,4 +1,4 @@
--- copied and slightly adapted from https://github.com/LunarVim/Neovim-from-scratch
+-- adapted from https://github.com/LunarVim/Neovim-from-scratch
 local status_ok, _ = pcall(require, "impatient")
 if not status_ok then
 	vim.notify("impatient did not load", vim.log.levels.WARN)
