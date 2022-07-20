@@ -19,14 +19,14 @@ end
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost nvimConf.plugins.lua source <afile> | PackerSync
   augroup end
 ]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  vim.notify("packer did not load", vim.log.levels.WARN)
+	vim.notify("packer did not load", vim.log.levels.WARN)
 	return
 end
 
@@ -45,31 +45,31 @@ return packer.startup(function(use)
 	-- use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 
-  use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	require("pluginsConf.autopairs")
 
-  use("numToStr/Comment.nvim") -- Easily comment stuff
+	use("numToStr/Comment.nvim") -- Easily comment stuff
 	require("pluginsConf.comment")
 
-  use("kyazdani42/nvim-web-devicons")
+	use("kyazdani42/nvim-web-devicons")
 
-  use("kyazdani42/nvim-tree.lua")
+	use("kyazdani42/nvim-tree.lua")
 	require("pluginsConf.nvim-tree")
 
-  use("moll/vim-bbye")
+	use("moll/vim-bbye")
 
-  use("nvim-lualine/lualine.nvim")
+	use("nvim-lualine/lualine.nvim")
 	require("pluginsConf.lualine")
 
-  use("akinsho/toggleterm.nvim")
+	use("akinsho/toggleterm.nvim")
 	require("pluginsConf.toggleterm")
 
-  use("lukas-reineke/indent-blankline.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
 	require("pluginsConf.indentline")
 
-  -- use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
+	-- use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 
-  use("folke/which-key.nvim")
+	use("folke/which-key.nvim")
 	require("pluginsConf.whichkey")
 
 	use("Pocco81/TrueZen.nvim")
@@ -79,8 +79,11 @@ return packer.startup(function(use)
 	require("pluginsConf.lightspeed")
 
 	-- Colorschemes
-	use({ "ellisonleao/gruvbox.nvim" })
+	use("ellisonleao/gruvbox.nvim")
 	-- use({ "gruvbox-community/gruvbox" })
+
+	use("rcarriga/nvim-notify")
+	vim.notify = require("notify")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -101,7 +104,7 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("b0o/schemastore.nvim")
-  use("RRethy/vim-illuminate")
+	use("RRethy/vim-illuminate")
 	require("pluginsConf.lsp")
 
 	-- autotag
