@@ -48,6 +48,7 @@ local function lsp_highlight_document(client)
   if not status_ok then
     return
   end
+  vim.g.Illuminate_ftblacklist = {'NvimTree'}
   illuminate.on_attach(client)
 end
 
