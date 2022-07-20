@@ -46,6 +46,7 @@ end
 local function lsp_highlight_document(client)
   local status_ok, illuminate = pcall(require, "illuminate")
   if not status_ok then
+  vim.notify("illuminate did not load in lsp.handlers", vim.log.levels.WARN)
     return
   end
   vim.g.Illuminate_ftblacklist = {'NvimTree'}
@@ -95,6 +96,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
+  vim.notify("cmp_nvim_lsp did not load in lsp.handlers", vim.log.levels.WARN)
 	return
 end
 

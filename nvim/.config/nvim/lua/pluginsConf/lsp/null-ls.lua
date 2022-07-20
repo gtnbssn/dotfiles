@@ -1,5 +1,6 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
+  vim.notify("null-ls did not load", vim.log.levels.WARN)
 	return
 end
 

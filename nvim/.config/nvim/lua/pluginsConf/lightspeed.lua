@@ -1,5 +1,6 @@
 local status_ok, lightspeed = pcall(require, "lightspeed")
 if not status_ok then
+  vim.notify("lightspeed did not load", vim.log.levels.WARN)
   return
 end
 

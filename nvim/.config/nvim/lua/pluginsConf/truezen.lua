@@ -1,5 +1,6 @@
 local status_ok, truezen = pcall(require, "true-zen")
 if not status_ok then
+  vim.notify("truezen did not load", vim.log.levels.WARN)
   return
 end
 
