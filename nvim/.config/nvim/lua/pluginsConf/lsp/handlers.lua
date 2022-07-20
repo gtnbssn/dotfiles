@@ -87,7 +87,11 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+  -- these will disable formatting, so that null-ls will pick it up without asking
 	if client.name == "tsserver" then
+		client.resolved_capabilities.document_formatting = false
+	end
+	if client.name == "sumneko_lua" then
 		client.resolved_capabilities.document_formatting = false
 	end
 	lsp_keymaps(bufnr)
