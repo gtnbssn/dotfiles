@@ -43,18 +43,39 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
-	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-	use("numToStr/Comment.nvim") -- Easily comment stuff
-	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
-	use("moll/vim-bbye")
-	use("nvim-lualine/lualine.nvim")
-	use("akinsho/toggleterm.nvim")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
-	use("folke/which-key.nvim")
-  use("Pocco81/TrueZen.nvim")
-  use ('ggandor/lightspeed.nvim')
+
+  use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	require("pluginsConf.autopairs")
+
+  use("numToStr/Comment.nvim") -- Easily comment stuff
+	require("pluginsConf.comment")
+
+  use("kyazdani42/nvim-web-devicons")
+
+  use("kyazdani42/nvim-tree.lua")
+	require("pluginsConf.nvim-tree")
+
+  use("moll/vim-bbye")
+
+  use("nvim-lualine/lualine.nvim")
+	require("pluginsConf.lualine")
+
+  use("akinsho/toggleterm.nvim")
+	require("pluginsConf.toggleterm")
+
+  use("lukas-reineke/indent-blankline.nvim")
+	require("pluginsConf.indentline")
+
+  use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
+
+  use("folke/which-key.nvim")
+	require("pluginsConf.whichkey")
+
+	use("Pocco81/TrueZen.nvim")
+	require("pluginsConf.truezen")
+
+	use("ggandor/lightspeed.nvim") -- check out https://github.com/ggandor/leap.nvim to switch when it becomes mature
+	require("pluginsConf.lightspeed")
 
 	-- Colorschemes
 	use({ "ellisonleao/gruvbox.nvim" })
@@ -67,6 +88,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
+	require("pluginsConf.cmp")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -77,13 +99,11 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-  use ("b0o/schemastore.nvim")
+	use("b0o/schemastore.nvim")
+	require("pluginsConf.lsp")
 
 	-- autotag
 	use("windwp/nvim-ts-autotag")
-
-	-- trouble
-	--use "folke/trouble.nvim"
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -91,6 +111,7 @@ return packer.startup(function(use)
 		"nvim-telescope/telescope-fzf-native.nvim",
 		run = "make",
 	})
+	require("pluginsConf.telescope")
 
 	-- Treesitter
 	use({
@@ -102,9 +123,11 @@ return packer.startup(function(use)
 		end,
 	})
 	use("JoosepAlviste/nvim-ts-context-commentstring")
+	require("pluginsConf.treesitter")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
+	require("pluginsConf.gitsigns")
 
 	-- rest.nvim
 	use({
@@ -121,6 +144,7 @@ return packer.startup(function(use)
 		"davidgranstrom/scnvim",
 		run = ":call scnvim#install()",
 	})
+	require("pluginsConf.scnvim")
 	-- TODO 'quangnguyen30192/cmp-nvim-tags' for supercollider autocomplete ?
 
 	-- Automatically set up your configuration after cloning packer.nvim
