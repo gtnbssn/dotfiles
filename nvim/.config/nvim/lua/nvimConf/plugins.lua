@@ -61,8 +61,8 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	require("pluginsConf.lualine")
 
-	use("akinsho/toggleterm.nvim")
-	require("pluginsConf.toggleterm")
+	-- use("akinsho/toggleterm.nvim")
+	-- require("pluginsConf.toggleterm")
 
 	use("lukas-reineke/indent-blankline.nvim")
 	require("pluginsConf.indentline")
@@ -135,12 +135,12 @@ return packer.startup(function(use)
 	require("pluginsConf.gitsigns")
 
 	-- rest.nvim
-	use({
-		"NTBBloodbath/rest.nvim",
-		config = function()
-			require("rest-nvim").setup()
-		end,
-	})
+	-- use({
+	-- 	"NTBBloodbath/rest.nvim",
+	-- 	config = function()
+	-- 		require("rest-nvim").setup()
+	-- 	end,
+	-- })
 
 	-- use("Glench/Vim-Jinja2-Syntax")
 
