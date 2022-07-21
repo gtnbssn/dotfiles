@@ -15,7 +15,6 @@ M.setup = function()
 
 	local config = {
 		virtual_text = false,
-		-- show signs
 		signs = {
 			active = signs,
 		},
@@ -36,10 +35,12 @@ M.setup = function()
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",
+    width = 60,
 	})
 
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 		border = "rounded",
+    width = 60,
 	})
 end
 
@@ -59,7 +60,7 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-q>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
@@ -69,7 +70,7 @@ local function lsp_keymaps(bufnr)
 	-- 	bufnr,
 	-- 	"n",
 	-- 	"gl",
-	-- 	'<cmd>lua vim.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
+	-- 	'<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>',
 	-- 	opts
 	-- )
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "ê", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
@@ -81,6 +82,8 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+  -- this can be useful for debugging but otherwise it's annoying
+  -- vim.notify("starting "..client.name)
   -- these will disable formatting, so that null-ls will pick it up without asking
 	if client.name == "tsserver" then
 		client.resolved_capabilities.document_formatting = false
