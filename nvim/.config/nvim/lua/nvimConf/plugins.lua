@@ -73,8 +73,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 	require("pluginsConf.whichkey")
 
-	use("Pocco81/TrueZen.nvim")
-	require("pluginsConf.truezen")
+  use("folke/zen-mode.nvim")
 
 	use("ggandor/lightspeed.nvim") -- check out https://github.com/ggandor/leap.nvim to switch when it becomes mature
 	require("pluginsConf.lightspeed")
