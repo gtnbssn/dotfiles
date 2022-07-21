@@ -21,4 +21,4 @@ require("gruvbox").setup({
     DiagnosticSignInfo = { bg = "#282828", fg = "#98971a" },
   },
 })
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme rose-pine")

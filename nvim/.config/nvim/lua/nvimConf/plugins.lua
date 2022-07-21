@@ -81,7 +81,11 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("ellisonleao/gruvbox.nvim")
-	-- use({ "gruvbox-community/gruvbox" })
+	use({
+		"rose-pine/neovim",
+		as = "rose-pine",
+		tag = "v1.*",
+	})
 	require("pluginsConf.colorscheme")
 
 	use("rcarriga/nvim-notify")
