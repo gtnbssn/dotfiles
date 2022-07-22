@@ -50,6 +50,7 @@ return packer.startup(function(use)
 	require("pluginsConf.autopairs")
 
 	use("numToStr/Comment.nvim") -- Easily comment stuff
+	use("JoosepAlviste/nvim-ts-context-commentstring")
 	require("pluginsConf.comment")
 
 	use("kyazdani42/nvim-web-devicons")
@@ -132,7 +133,6 @@ return packer.startup(function(use)
 			ft_to_parser.astro = "tsx"
 		end,
 	})
-	use("JoosepAlviste/nvim-ts-context-commentstring")
 	require("pluginsConf.treesitter")
 
 	-- Git
