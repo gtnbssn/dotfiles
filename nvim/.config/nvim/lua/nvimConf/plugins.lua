@@ -73,7 +73,17 @@ if packer ~= nil then
 		use("folke/which-key.nvim")
 		Prequire("pluginsConf.whichkey")
 
-		use("folke/zen-mode.nvim")
+		use({
+			"folke/zen-mode.nvim",
+			config = function()
+				Prequire("zen-mode").setup({
+					window = {
+						backdrop = 1.0,
+						width = 100,
+					},
+				})
+			end,
+		})
 
 		use("ggandor/lightspeed.nvim") -- check out https://github.com/ggandor/leap.nvim to switch when it becomes mature
 		Prequire("pluginsConf.lightspeed")
@@ -124,10 +134,10 @@ if packer ~= nil then
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
-			config = function()
-				local ft_to_parser = Prequire("nvim-treesitter.parsers").filetype_to_parsername
-				ft_to_parser.astro = "tsx"
-			end,
+			-- config = function()
+			-- 	local ft_to_parser = Prequire("nvim-treesitter.parsers").filetype_to_parsername
+			-- 	ft_to_parser.astro = "tsx"
+			-- end,
 		})
 		Prequire("pluginsConf.treesitter")
 
