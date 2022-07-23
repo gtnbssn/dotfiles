@@ -1,8 +1,4 @@
-local status_ok, lightspeed = pcall(require, "lightspeed")
-if not status_ok then
-  vim.notify("lightspeed did not load", vim.log.levels.WARN)
-  return
-end
+local lightspeed = Prequire("lightspeed")
 
 local setup = {
   ignore_case = false,
@@ -15,9 +11,9 @@ local setup = {
   substitute_chars = { ['\r'] = '¬', },
   -- Leaving the appropriate list empty effectively disables "smart" mode,
   -- and forces auto-jump to be on or off.
-  safe_labels = { "s", "f", "n", "u", "t", "/", "F", "L", "N", "H", "G", "M", "U", "T", "?", "Z" },
+  --[[ safe_labels = { "s", "f", "n", "u", "t", "/", "F", "L", "N", "H", "G", "M", "U", "T", "?", "Z" },
   labels = { "s", "f", "n", "j", "k", "l", "o", "d", "w", "e", "h", "m", "v", "g", "u", "t", "c", ".", "z", "/", "F", "L",
-    "N", "H", "G", "M", "U", "T", "?", "Z" },
+    "N", "H", "G", "M", "U", "T", "?", "Z" }, ]]
   -- These keys are captured directly by the plugin at runtime.
   special_keys = {
     next_match_group = '<space>',
@@ -28,4 +24,6 @@ local setup = {
   repeat_ft_with_target_char = false,
 }
 
-lightspeed.setup(setup)
+if lightspeed ~= nil then
+  lightspeed.setup(setup)
+end

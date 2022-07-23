@@ -1,4 +1,4 @@
-require("gruvbox").setup({
+--[[ require("gruvbox").setup({
   undercurl = true,
   underline = true,
   bold = true,
@@ -20,5 +20,5 @@ require("gruvbox").setup({
     DiagnosticSignHint = { bg = "#282828", fg = "#fabd2f" },
     DiagnosticSignInfo = { bg = "#282828", fg = "#98971a" },
   },
-})
+}) ]]
 vim.cmd("colorscheme rose-pine")

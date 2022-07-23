@@ -11,15 +11,19 @@ _G.__luacache_config = {
 	},
 }
 
-local status_ok, impatient = pcall(require, "impatient")
-if not status_ok then
-	vim.notify("impatient did not load", vim.log.levels.WARN)
-	return
--- else
---   impatient.enable_profile()
+function Prequire(package)
+  local status, lib = pcall(require, package)
+  if status then
+    return lib
+  else
+    vim.notify("Failed to require '" .. package .. "' from " .. debug.getinfo(2).source)
+    return nil
+  end
 end
 
-require("nvimConf.options")
-require("nvimConf.keymaps")
-require("nvimConf.autocommands")
-require("nvimConf.plugins")
+Prequire("impatient")
+
+Prequire("nvimConf.options")
+Prequire("nvimConf.keymaps")
+Prequire("nvimConf.autocommands")
+Prequire("nvimConf.plugins")

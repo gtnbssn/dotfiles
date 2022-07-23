@@ -1,8 +1,4 @@
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-  vim.notify("which-key did not load", vim.log.levels.WARN)
-	return
-end
+local which_key = Prequire("which-key")
 
 local setup = {
 	plugins = {
@@ -198,5 +194,7 @@ local mappings = {
 	},
 }
 
-which_key.setup(setup)
-which_key.register(mappings, opts)
+if which_key ~= nil then
+	which_key.setup(setup)
+	which_key.register(mappings, opts)
+end
