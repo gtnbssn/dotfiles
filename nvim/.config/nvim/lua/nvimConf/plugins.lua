@@ -42,6 +42,9 @@ if packer ~= nil then
 		use("lewis6991/impatient.nvim")
 		use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 
+		use("rcarriga/nvim-notify")
+		vim.notify = Prequire("notify")
+
 		use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 		Prequire("pluginsConf.autopairs")
 
@@ -83,9 +86,6 @@ if packer ~= nil then
 			tag = "v1.*",
 		})
 		Prequire("pluginsConf.colorscheme")
-
-		use("rcarriga/nvim-notify")
-		vim.notify = Prequire("notify")
 
 		-- cmp plugins
 		use("hrsh7th/nvim-cmp") -- The completion plugin
