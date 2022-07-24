@@ -44,7 +44,7 @@ M.setup = function()
 	})
 end
 
-local function lsp_highlight_document(client)
+--[[ local function lsp_highlight_document(client)
   local status_ok, illuminate = pcall(require, "illuminate")
   if not status_ok then
   vim.notify("illuminate did not load in lsp.handlers", vim.log.levels.WARN)
@@ -52,7 +52,7 @@ local function lsp_highlight_document(client)
   end
   vim.g.Illuminate_ftblacklist = {'NvimTree'}
   illuminate.on_attach(client)
-end
+end ]]
 
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -73,6 +73,15 @@ local function lsp_keymaps(bufnr)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
+local illuminate = Prequire("illuminate")
+
+local function lsp_highlight_document(client)
+  if illuminate ~= nil then
+    vim.g.Illuminate_ftblacklist = {"NvimTree"}
+    illuminate.on_attach(client)
+  end
+end
+
 M.on_attach = function(client, bufnr)
   -- this can be useful for debugging but otherwise it's annoying
   -- vim.notify("starting "..client.name)
@@ -89,12 +98,10 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-  vim.notify("cmp_nvim_lsp did not load in lsp.handlers", vim.log.levels.WARN)
-	return
-end
+local cmp_nvim_lsp = Prequire("cmp_nvim_lsp")
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+if cmp_nvim_lsp ~= nil then
+  M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+end
 
 return M

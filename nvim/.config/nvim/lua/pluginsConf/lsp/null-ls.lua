@@ -1,24 +1,22 @@
-local null_ls_status_ok, null_ls = pcall(require, "null-ls")
-if not null_ls_status_ok then
-  vim.notify("null-ls did not load", vim.log.levels.WARN)
-	return
+local null_ls = Prequire("null-ls")
+
+if null_ls ~= nil then
+	-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+	local formatting = null_ls.builtins.formatting
+	-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+	local diagnostics = null_ls.builtins.diagnostics
+
+	null_ls.setup({
+		debug = false,
+		sources = {
+			formatting.prettier.with({
+				prefer_local = "node_modules/.bin",
+			}),
+			formatting.black.with({ extra_args = { "--fast" } }),
+			formatting.stylua,
+			formatting.shfmt,
+			diagnostics.flake8,
+			diagnostics.eslint,
+		},
+	})
 end
-
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-local formatting = null_ls.builtins.formatting
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = null_ls.builtins.diagnostics
-
-null_ls.setup({
-	debug = false,
-	sources = {
-		formatting.prettier.with({
-			prefer_local = "node_modules/.bin",
-		}),
-		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.stylua,
-		formatting.shfmt,
-		diagnostics.flake8,
-    diagnostics.eslint
-	},
-})
