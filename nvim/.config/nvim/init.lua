@@ -23,7 +23,7 @@ end
 
 Prequire("impatient")
 
-Prequire("nvimConf.options")
-Prequire("nvimConf.keymaps")
-Prequire("nvimConf.autocommands")
-Prequire("nvimConf.plugins")
+require("nvimConf.options")
+require("nvimConf.keymaps")
+require("nvimConf.autocommands")
+require("nvimConf.plugins")

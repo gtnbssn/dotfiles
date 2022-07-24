@@ -49,32 +49,32 @@ if packer ~= nil then
 		})
 
 		use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-		Prequire("pluginsConf.autopairs")
+		require("pluginsConf.autopairs")
 
 		use("numToStr/Comment.nvim") -- Easily comment stuff
 		use("JoosepAlviste/nvim-ts-context-commentstring")
-		Prequire("pluginsConf.comment")
+		require("pluginsConf.comment")
 
 		use("kyazdani42/nvim-web-devicons")
 
 		use("kyazdani42/nvim-tree.lua")
-		Prequire("pluginsConf.nvim-tree")
+		require("pluginsConf.nvim-tree")
 
 		use("moll/vim-bbye")
 
 		use("nvim-lualine/lualine.nvim")
-		Prequire("pluginsConf.lualine")
+		require("pluginsConf.lualine")
 
 		-- use("akinsho/toggleterm.nvim")
 		-- Prequire("pluginsConf.toggleterm")
 
 		use("lukas-reineke/indent-blankline.nvim")
-		Prequire("pluginsConf.indentline")
+		require("pluginsConf.indentline")
 
 		-- use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 
 		use("folke/which-key.nvim")
-		Prequire("pluginsConf.whichkey")
+		require("pluginsConf.whichkey")
 
 		use({
 			"folke/zen-mode.nvim",
@@ -89,7 +89,7 @@ if packer ~= nil then
 		})
 
 		use("ggandor/lightspeed.nvim") -- check out https://github.com/ggandor/leap.nvim to switch when it becomes mature
-		Prequire("pluginsConf.lightspeed")
+		require("pluginsConf.lightspeed")
 
 		-- Colorschemes
 		use("ellisonleao/gruvbox.nvim")
@@ -98,7 +98,7 @@ if packer ~= nil then
 			as = "rose-pine",
 			tag = "v1.*",
 		})
-		Prequire("pluginsConf.colorscheme")
+		require("pluginsConf.colorscheme")
 
 		-- cmp plugins
 		use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -107,7 +107,7 @@ if packer ~= nil then
 		use("hrsh7th/cmp-cmdline") -- cmdline completions
 		use("saadparwaiz1/cmp_luasnip") -- snippet completions
 		use("hrsh7th/cmp-nvim-lsp")
-		Prequire("pluginsConf.cmp")
+		require("pluginsConf.cmp")
 
 		-- snippets
 		use("L3MON4D3/LuaSnip") --snippet engine
@@ -120,7 +120,7 @@ if packer ~= nil then
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 		use("b0o/schemastore.nvim")
 		use("RRethy/vim-illuminate")
-		Prequire("pluginsConf.lsp")
+		require("pluginsConf.lsp")
 
 		-- autotag
 		use("windwp/nvim-ts-autotag")
@@ -131,7 +131,7 @@ if packer ~= nil then
 			"nvim-telescope/telescope-fzf-native.nvim",
 			run = "make",
 		})
-		Prequire("pluginsConf.telescope")
+		require("pluginsConf.telescope")
 
 		-- Treesitter
 		use({
@@ -142,11 +142,11 @@ if packer ~= nil then
 			-- 	ft_to_parser.astro = "tsx"
 			-- end,
 		})
-		Prequire("pluginsConf.treesitter")
+		require("pluginsConf.treesitter")
 
 		-- Git
 		use("lewis6991/gitsigns.nvim")
-		Prequire("pluginsConf.gitsigns")
+		require("pluginsConf.gitsigns")
 
 		use("folke/lua-dev.nvim")
 
@@ -165,7 +165,7 @@ if packer ~= nil then
 			"davidgranstrom/scnvim",
 			run = ":call scnvim#install()",
 		})
-		Prequire("pluginsConf.scnvim")
+		require("pluginsConf.scnvim")
 		-- TODO 'quangnguyen30192/cmp-nvim-tags' for supercollider autocomplete ?
 
 		-- Automatically set up your configuration after cloning packer.nvim
