@@ -44,6 +44,9 @@ if packer ~= nil then
 
 		use("rcarriga/nvim-notify")
 		vim.notify = Prequire("notify")
+		vim.notify.setup({
+			timeout = 10000,
+		})
 
 		use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 		Prequire("pluginsConf.autopairs")
