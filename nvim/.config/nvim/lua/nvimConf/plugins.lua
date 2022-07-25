@@ -107,11 +107,11 @@ if packer ~= nil then
 		use("hrsh7th/cmp-cmdline") -- cmdline completions
 		use("saadparwaiz1/cmp_luasnip") -- snippet completions
 		use("hrsh7th/cmp-nvim-lsp")
-		require("pluginsConf.cmp")
-
 		-- snippets
 		use("L3MON4D3/LuaSnip") --snippet engine
 		use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+
+		require("pluginsConf.cmp")
 
 		-- LSP
 		use("neovim/nvim-lspconfig") -- enable LSP

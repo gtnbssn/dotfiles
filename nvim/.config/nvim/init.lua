@@ -12,13 +12,13 @@ _G.__luacache_config = {
 }
 
 function Prequire(package)
-  local status, lib = pcall(require, package)
-  if status then
-    return lib
-  else
-    vim.notify("Failed to require '" .. package .. "' from " .. debug.getinfo(2).source)
-    return nil
-  end
+	local status, lib = pcall(require, package)
+	if status then
+		return lib
+	else
+		vim.notify("Failed to require '" .. package .. "' from " .. debug.getinfo(2).source)
+		return nil
+	end
 end
 
 Prequire("impatient")

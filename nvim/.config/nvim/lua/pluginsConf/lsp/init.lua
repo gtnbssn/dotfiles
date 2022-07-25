@@ -4,6 +4,6 @@
 -- 	return
 -- end
 
-require "pluginsConf.lsp.configs"
+require("pluginsConf.lsp.configs")
 require("pluginsConf.lsp.handlers").setup()
-require "pluginsConf.lsp.null-ls"
+require("pluginsConf.lsp.null-ls")
