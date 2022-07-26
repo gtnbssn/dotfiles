@@ -6,7 +6,7 @@ return {
 					["geojson.json"] = {
 						description = "geojson overriden with a fileMatch thank you",
 						fileMatch = { "*.geojson" },
-						name = "geojson.json",
+						name = "geoJSON.json latest",
 						url = "https://json.schemastore.org/geojson.json",
 					},
 				},
