@@ -45,8 +45,18 @@ if packer ~= nil then
 		use("rcarriga/nvim-notify")
 		vim.notify = Prequire("notify")
 		vim.notify.setup({
-			timeout = 10000,
+			timeout = 7000,
 		})
+
+		-- Colorschemes
+		use("ellisonleao/gruvbox.nvim")
+		use("EdenEast/nightfox.nvim")
+		use({
+			"rose-pine/neovim",
+			as = "rose-pine",
+			tag = "v1.*",
+		})
+		require("pluginsConf.colorscheme")
 
 		use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 		require("pluginsConf.autopairs")
@@ -65,13 +75,8 @@ if packer ~= nil then
 		use("nvim-lualine/lualine.nvim")
 		require("pluginsConf.lualine")
 
-		-- use("akinsho/toggleterm.nvim")
-		-- Prequire("pluginsConf.toggleterm")
-
 		use("lukas-reineke/indent-blankline.nvim")
 		require("pluginsConf.indentline")
-
-		-- use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 
 		use("folke/which-key.nvim")
 		require("pluginsConf.whichkey")
@@ -90,15 +95,6 @@ if packer ~= nil then
 
 		use("ggandor/lightspeed.nvim") -- check out https://github.com/ggandor/leap.nvim to switch when it becomes mature
 		require("pluginsConf.lightspeed")
-
-		-- Colorschemes
-		use("ellisonleao/gruvbox.nvim")
-		use({
-			"rose-pine/neovim",
-			as = "rose-pine",
-			tag = "v1.*",
-		})
-		require("pluginsConf.colorscheme")
 
 		-- cmp plugins
 		use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -149,16 +145,6 @@ if packer ~= nil then
 		require("pluginsConf.gitsigns")
 
 		use("folke/lua-dev.nvim")
-
-		-- rest.nvim
-		-- use({
-		-- 	"NTBBloodbath/rest.nvim",
-		-- 	config = function()
-		-- 		Prequire("rest-nvim").setup()
-		-- 	end,
-		-- })
-
-		-- use("Glench/Vim-Jinja2-Syntax")
 
 		-- scnvim
 		use({

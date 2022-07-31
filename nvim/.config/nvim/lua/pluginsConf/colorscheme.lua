@@ -21,4 +21,4 @@
     DiagnosticSignInfo = { bg = "#282828", fg = "#98971a" },
   },
 }) ]]
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme terafox")

@@ -130,11 +130,11 @@ local mappings = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = {
-			"<cmd>Telescope lsp_document_diagnostics<cr>",
+			"<cmd>Telescope lsp_document_diagnostics<cr>", --FIXME unknown command
 			"Document Diagnostics",
 		},
 		w = {
-			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
+			"<cmd>Telescope lsp_workspace_diagnostics<cr>", --FIXME unknown command
 			"Workspace Diagnostics",
 		},
 		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
@@ -169,28 +169,12 @@ local mappings = {
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
 
-	T = {
-		name = "Terminal",
-		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	},
 	t = {
 		name = "Tabs",
 		n = { "<cmd>tabnew<cr>", "New tab" },
 		k = { "<cmd>tabnext<cr>", "Next tab" },
 		j = { "<cmd>tabprev<cr>", "Previous tab" },
 		o = { "<cmd>tabonly<cr>", "Close other tabs" },
-	},
-	r = {
-		name = "rest",
-		r = { "<Plug>RestNvim", "run query" },
-		p = { "<Plug>RestNvimPreview", "preview curl command" },
-		l = { "<Plug>RestNvimLast", "run last query" },
 	},
 }
 

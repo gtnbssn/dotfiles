@@ -66,10 +66,6 @@ local function lsp_keymaps(bufnr)
 	vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 	vim.keymap.set("n", "ë", vim.diagnostic.goto_prev, opts)
 	vim.keymap.set("n", "ê", vim.diagnostic.goto_next, opts)
-	vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
-	vim.keymap.set("n", "<leader>fa", vim.lsp.buf.formatting, opts)
-	vim.keymap.set("n", "<leader>af", vim.lsp.buf.code_action, opts)
-	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
