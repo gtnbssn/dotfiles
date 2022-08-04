@@ -96,6 +96,9 @@ if packer ~= nil then
 		use("ggandor/lightspeed.nvim") -- check out https://github.com/ggandor/leap.nvim to switch when it becomes mature
 		require("pluginsConf.lightspeed")
 
+    -- needed for lightspeed otherwise errors on dot repeat after a ct
+    use("tpope/vim-repeat")
+
 		-- cmp plugins
 		use("hrsh7th/nvim-cmp") -- The completion plugin
 		use("hrsh7th/cmp-buffer") -- buffer completions
