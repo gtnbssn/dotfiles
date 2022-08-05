@@ -25,6 +25,10 @@ vim.cmd([[
     autocmd!
     autocmd VimResized * tabdo wincmd = 
   augroup end
+  augroup vert_help
+    autocmd!
+    autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
+  augroup END
 ]])
 --  augroup _alpha
 --    autocmd!
