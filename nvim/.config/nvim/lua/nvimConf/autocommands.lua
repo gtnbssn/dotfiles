@@ -26,6 +26,14 @@ vim.api.nvim_create_autocmd(
     group = "generalSettings"
   }
 )
+vim.api.nvim_create_autocmd(
+  "BufWinEnter",
+  {
+    callback = function()
+      vim.opt.formatoptions:remove({"c", "r", "o"})
+    end
+  }
+)
 
 vim.api.nvim_create_augroup("cursorLine", { clear = true })
 vim.api.nvim_create_autocmd(
