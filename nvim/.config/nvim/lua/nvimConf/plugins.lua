@@ -136,10 +136,6 @@ if packer ~= nil then
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
-			-- config = function()
-			-- 	local ft_to_parser = Prequire("nvim-treesitter.parsers").filetype_to_parsername
-			-- 	ft_to_parser.astro = "tsx"
-			-- end,
 		})
 		require("pluginsConf.treesitter")
 
