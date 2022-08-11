@@ -2,7 +2,7 @@ local lsp_installer = Prequire("nvim-lsp-installer")
 
 local lspconfig = Prequire("lspconfig")
 
-local servers = {}
+local servers = {'tailwindcss'}
 
 if lsp_installer ~= nil then
 	local installedServers = lsp_installer.get_installed_servers()
