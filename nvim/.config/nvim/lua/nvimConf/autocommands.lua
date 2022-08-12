@@ -31,7 +31,8 @@ vim.api.nvim_create_autocmd(
   {
     callback = function()
       vim.opt.formatoptions:remove({"c", "r", "o"})
-    end
+    end,
+    group = "generalSettings"
   }
 )
 
