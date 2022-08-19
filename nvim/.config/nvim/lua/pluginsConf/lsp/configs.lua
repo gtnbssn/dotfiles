@@ -1,18 +1,20 @@
-local lsp_installer = Prequire("nvim-lsp-installer")
+local mason = Prequire("mason")
+
+local masonlspconfig = Prequire("mason-lspconfig")
 
 local lspconfig = Prequire("lspconfig")
 
-local servers = {'tailwindcss'}
+local servers = {}
 
-if lsp_installer ~= nil then
-	local installedServers = lsp_installer.get_installed_servers()
+if masonlspconfig ~= nil then
+	local installedServers = masonlspconfig.get_installed_servers()
 	if installedServers ~= nil then
 		for _, server in ipairs(installedServers) do
-			table.insert(servers, server.name)
+			table.insert(servers, server)
 		end
 	end
 
-	lsp_installer.setup({
+	masonlspconfig.setup({
 		ensure_installed = servers,
 	})
 end

@@ -13,7 +13,7 @@ if null_ls ~= nil then
 				prefer_local = "node_modules/.bin",
 			}),
 			formatting.black.with({ extra_args = { "--fast" } }),
-			formatting.stylua,
+			--[[ formatting.stylua, ]]
 			formatting.shfmt,
 			diagnostics.flake8,
 			diagnostics.eslint,

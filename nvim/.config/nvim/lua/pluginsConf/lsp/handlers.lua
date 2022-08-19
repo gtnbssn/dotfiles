@@ -51,7 +51,7 @@ local function lsp_keymaps(bufnr)
 	vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+	vim.keymap.set("n", "<C-K>", vim.lsp.buf.signature_help, opts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 	vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 	vim.keymap.set("n", "ë", vim.diagnostic.goto_prev, opts)
@@ -75,9 +75,9 @@ M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.resolved_capabilities.document_formatting = false
 	end
-	if client.name == "sumneko_lua" then
+	--[[ if client.name == "sumneko_lua" then
 		client.resolved_capabilities.document_formatting = false
-	end
+	end ]]
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 end
