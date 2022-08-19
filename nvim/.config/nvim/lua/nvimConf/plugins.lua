@@ -49,7 +49,6 @@ if packer ~= nil then
 		})
 
 		-- Colorschemes
-		use("ellisonleao/gruvbox.nvim")
 		use("EdenEast/nightfox.nvim")
 		use({
 			"rose-pine/neovim",
