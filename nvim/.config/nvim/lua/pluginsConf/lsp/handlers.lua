@@ -59,15 +59,6 @@ local function lsp_keymaps(bufnr)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
-local illuminate = Prequire("illuminate")
-
-local function lsp_highlight_document(client)
-	if illuminate ~= nil then
-		vim.g.Illuminate_ftblacklist = { "NvimTree" }
-		illuminate.on_attach(client)
-	end
-end
-
 M.on_attach = function(client, bufnr)
 	-- this can be useful for debugging but otherwise it's annoying
 	-- vim.notify("starting "..client.name)
@@ -79,7 +70,6 @@ M.on_attach = function(client, bufnr)
 		client.resolved_capabilities.document_formatting = false
 	end ]]
 	lsp_keymaps(bufnr)
-	lsp_highlight_document(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

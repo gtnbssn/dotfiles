@@ -113,15 +113,14 @@ if packer ~= nil then
 
     -- LSP
     use("neovim/nvim-lspconfig") -- enable LSP
-    --[[ use("williamboman/nvim-lsp-installer") -- simple to use language server installer ]]
     use { "williamboman/mason.nvim" }
     require("mason").setup()
     use { "williamboman/mason-lspconfig.nvim" }
-    --[[ use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for ]]
     use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
     use("b0o/schemastore.nvim")
-    use("RRethy/vim-illuminate")
     require("pluginsConf.lsp")
+    use("RRethy/vim-illuminate")
+    -- require('illuminate').configure({ filetypes_denylist = { "NvimTree" } })
 
     -- autotag
     use("windwp/nvim-ts-autotag")
@@ -146,6 +145,9 @@ if packer ~= nil then
     require("pluginsConf.gitsigns")
 
     use("folke/lua-dev.nvim")
+
+    use("NvChad/nvim-colorizer.lua")
+    require("colorizer").setup({ '*' }, { mode = 'virtualtext' })
 
     -- scnvim
     use({
