@@ -116,7 +116,7 @@ if cmp ~= nil and luasnip ~= nil then
 		},
 		window = {
 			documentation = {
-				border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+				border = "solid",
 			},
 		},
 	})

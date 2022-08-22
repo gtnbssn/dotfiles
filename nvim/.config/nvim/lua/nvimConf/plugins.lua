@@ -30,7 +30,7 @@ if packer ~= nil then
   packer.init({
     display = {
       open_fn = function()
-        return Prequire("packer.util").float({ border = "rounded" })
+        return Prequire("packer.util").float({ border = "solid" })
       end,
     },
   })

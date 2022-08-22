@@ -44,7 +44,7 @@ if gitsigns ~= nil then
 		max_file_length = 40000,
 		preview_config = {
 			-- Options passed to nvim_open_win
-			border = "rounded",
+			border = "solid",
 			style = "minimal",
 			relative = "cursor",
 			row = 0,
