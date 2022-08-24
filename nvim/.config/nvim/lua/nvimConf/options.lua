@@ -32,8 +32,9 @@ local options = {
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
 	foldlevel = 42,
-  title = true,
-  titlestring = "nvim",
+	title = true,
+	titlestring = "nvim",
+	wildmenu = false,
 }
 
 vim.opt.shortmess:append("c")

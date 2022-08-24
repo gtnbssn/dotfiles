@@ -7,10 +7,12 @@ if telescope ~= nil then
 		defaults = {
 
 			prompt_prefix = " ",
-			selection_caret = " ",
+			selection_caret = "> ",
 			path_display = { "smart" },
-      border = false,
-      borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+			border = true,
+			borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+			winblend = 10,
+			layout_strategy = "flex",
 
 			mappings = {
 				i = {
