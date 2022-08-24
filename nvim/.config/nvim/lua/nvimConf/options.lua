@@ -35,6 +35,7 @@ local options = {
 	title = true,
 	titlestring = "nvim",
 	wildmenu = false,
+	winblend = 10,
 }
 
 vim.opt.shortmess:append("c")
