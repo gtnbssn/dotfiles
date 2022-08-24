@@ -9,6 +9,8 @@ if telescope ~= nil then
 			prompt_prefix = " ",
 			selection_caret = " ",
 			path_display = { "smart" },
+      border = false,
+      borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
 
 			mappings = {
 				i = {
