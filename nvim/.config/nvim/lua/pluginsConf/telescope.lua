@@ -80,6 +80,11 @@ if telescope ~= nil then
 			},
 		},
 		pickers = {
+			buffers = {
+				theme = "dropdown",
+				borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+				previewer = false,
+			},
 			-- Default configuration for builtin pickers goes here:
 			-- picker_name = {
 			--   picker_config_key = value,
