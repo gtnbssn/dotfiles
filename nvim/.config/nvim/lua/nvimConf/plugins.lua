@@ -139,6 +139,7 @@ if packer ~= nil then
 			run = ":TSUpdate",
 		})
 		require("pluginsConf.treesitter")
+    use("nvim-treesitter/nvim-treesitter-context")
 
 		-- Git
 		use("lewis6991/gitsigns.nvim")
