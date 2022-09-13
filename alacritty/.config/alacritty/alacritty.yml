@@ -1,3 +1,5 @@
+env:
+  TERM: xterm-256color
 window:
   dimensions:
     columns: 100
@@ -70,13 +72,45 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-colors:
-  primary:
-    background: "#0f1c1e"
-    foreground: "#e6eaea"
+# colors:
+#   primary:
+#     background: "#0f1c1e"
+#     foreground: "#e6eaea"
+#
+# dim_foreground: '#cbd9d8'
+# bright_foreground: '#eaeeee'
 
-dim_foreground: '#cbd9d8'
-bright_foreground: '#eaeeee'
+  # Nightfox Alacritty Colors
+# Style: terafox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/terafox/nightfox_alacritty.yml
+colors:
+  # Default colors
+  primary:
+    background: '0x152528'
+    foreground: '0xe6eaea'
+  # Normal colors
+  normal:
+    black:   '0x2f3239'
+    red:     '0xe85c51'
+    green:   '0x7aa4a1'
+    yellow:  '0xfda47f'
+    blue:    '0x5a93aa'
+    magenta: '0xad5c7c'
+    cyan:    '0xa1cdd8'
+    white:   '0xebebeb'
+  # Bright colors
+  bright:
+    black:   '0x4e5157'
+    red:     '0xeb746b'
+    green:   '0x8eb2af'
+    yellow:  '0xfdb292'
+    blue:    '0x73a3b7'
+    magenta: '0xb97490'
+    cyan:    '0xafd4de'
+    white:   '0xeeeeee'
+  indexed_colors:
+    - { index: 16, color: '0xff8349' }
+    - { index: 17, color: '0xcb7985' }
 
 # Cursor colors
 #
@@ -158,41 +192,6 @@ bright_foreground: '#eaeeee'
 #  text: CellBackground
 #  background: CellForeground
 
-normal:
-  black: '0x2F3239'
-  red: '0xe85c51'
-  green: '0x7aa4a1'
-  yellow: '0xfda47f'
-  blue: '0x5a93aa'
-  magenta: '0xad5c7c'
-  cyan: '0xa1cdd8'
-  white: '0xebebeb'
-  #orange: '#ff8349'
-  #pink: '#cb7985'
-
-bright:
-  black: '0x4e5157'
-  red: '0xeb746b'
-  green: '0x8eb2af'
-  yellow: '0xfdb292'
-  blue: '0x73a3b7'
-  magenta: '0xb97490'
-  cyan: '0xafd4de'
-  white: '0xeeeeee'
-  #orange: '#ff9664'
-  #pink: '#d38d97'
-
-dim:
-  black: '0x282a30'
-  red: '0xc54e45'
-  green: '0x688b89'
-  yellow: '0xd78b6c'
-  blue: '0x4d7d90'
-  magenta: '0x934e69'
-  cyan: '0x89aeb8'
-  white: '0xc8c8c8'
-  # orange: "#d96f3e"
-  # pink: "#ad6771"
 # Indexed Colors
 #
 # The indexed colors include all colors from 16 to 256.
