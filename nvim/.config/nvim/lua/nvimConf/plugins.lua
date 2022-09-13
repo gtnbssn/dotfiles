@@ -147,7 +147,10 @@ if packer ~= nil then
 		use("folke/lua-dev.nvim")
 
 		use("NvChad/nvim-colorizer.lua")
-		require("colorizer").setup({ "*" }, { mode = "virtualtext" })
+		require("colorizer").setup({
+			filetypes = { "*", "!help", "!NvimTree", "!packer", "!mason" },
+			user_default_options = { mode = "virtualtext" },
+		})
 
 		-- scnvim
 		use({

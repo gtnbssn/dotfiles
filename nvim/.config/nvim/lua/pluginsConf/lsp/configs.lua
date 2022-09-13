@@ -1,5 +1,3 @@
-local mason = Prequire("mason")
-
 local masonlspconfig = Prequire("mason-lspconfig")
 
 local lspconfig = Prequire("lspconfig")
