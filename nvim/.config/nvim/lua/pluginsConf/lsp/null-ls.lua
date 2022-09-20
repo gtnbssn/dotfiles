@@ -16,7 +16,7 @@ if null_ls ~= nil then
 			formatting.stylua,
 			formatting.shfmt,
 			diagnostics.flake8,
-			diagnostics.eslint,
+			-- diagnostics.eslint,
 		},
 	})
 end
