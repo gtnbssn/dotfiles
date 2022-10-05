@@ -92,8 +92,8 @@ if packer ~= nil then
 			end,
 		})
 
-		use("ggandor/lightspeed.nvim") -- check out https://github.com/ggandor/leap.nvim to switch when it becomes mature
-		require("pluginsConf.lightspeed")
+    use("ggandor/leap.nvim")
+    require("pluginsConf.leap")
 
 		-- needed for lightspeed otherwise errors on dot repeat after a ct
 		use("tpope/vim-repeat")
@@ -120,7 +120,7 @@ if packer ~= nil then
 		use("b0o/schemastore.nvim")
 		require("pluginsConf.lsp")
 		use("RRethy/vim-illuminate")
-		-- require('illuminate').configure({ filetypes_denylist = { "NvimTree" } })
+		require('illuminate').configure({ filetypes_denylist = { "NvimTree", "mason", "packer" } })
 
 		-- autotag
 		use("windwp/nvim-ts-autotag")
