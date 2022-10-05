@@ -11,7 +11,7 @@ local setup = {
 	-- Leaving the appropriate list empty effectively disables "smart" mode,
 	-- and forces auto-jump to be on or off.
 	--[[ safe_labels = { "s", "f", "n", "u", "t", "/", "F", "L", "N", "H", "G", "M", "U", "T", "?", "Z" },
-	labels = {"s","f","n","j","k","l","o","d","w","e","h","m","v","g","u","t","c",".","z","/","F","L","N","H","G","M","U","T","?","Z"	}, ]]
+	labels = {"s","f","n","j","k","l","o","d","w","e","h","m","v","g","u","t","c",".","z","/","F","L","N","H","G","M","U","T","?","Z" }, ]]
 	special_keys = {
 		repeat_search = "<enter>",
 		next_aot_match = "<enter>",
