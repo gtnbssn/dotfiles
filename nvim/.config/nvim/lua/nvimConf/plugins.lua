@@ -92,8 +92,8 @@ if packer ~= nil then
 			end,
 		})
 
-    use("ggandor/leap.nvim")
-    require("pluginsConf.leap")
+		use("ggandor/leap.nvim")
+		require("pluginsConf.leap")
 
 		-- needed for lightspeed otherwise errors on dot repeat after a ct
 		use("tpope/vim-repeat")
@@ -120,7 +120,7 @@ if packer ~= nil then
 		use("b0o/schemastore.nvim")
 		require("pluginsConf.lsp")
 		use("RRethy/vim-illuminate")
-		require('illuminate').configure({ filetypes_denylist = { "NvimTree", "mason", "packer" } })
+		require("illuminate").configure({ filetypes_denylist = { "NvimTree", "mason", "packer" } })
 
 		-- autotag
 		use("windwp/nvim-ts-autotag")
@@ -139,7 +139,7 @@ if packer ~= nil then
 			run = ":TSUpdate",
 		})
 		require("pluginsConf.treesitter")
-    use("nvim-treesitter/nvim-treesitter-context")
+		use("nvim-treesitter/nvim-treesitter-context")
 
 		-- Git
 		use("lewis6991/gitsigns.nvim")
