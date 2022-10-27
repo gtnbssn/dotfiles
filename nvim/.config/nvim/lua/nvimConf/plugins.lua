@@ -42,12 +42,6 @@ if packer ~= nil then
 		use("lewis6991/impatient.nvim")
 		use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 
-		use("rcarriga/nvim-notify")
-		vim.notify = Prequire("notify")
-		vim.notify.setup({
-			timeout = 7000,
-		})
-
 		-- Colorschemes
 		use("EdenEast/nightfox.nvim")
 		use({
@@ -56,13 +50,6 @@ if packer ~= nil then
 			tag = "v1.*",
 		})
 		require("pluginsConf.colorscheme")
-
-		use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-		require("pluginsConf.autopairs")
-
-		use("numToStr/Comment.nvim") -- Easily comment stuff
-		use("JoosepAlviste/nvim-ts-context-commentstring")
-		require("pluginsConf.comment")
 
 		use("kyazdani42/nvim-web-devicons")
 
@@ -118,12 +105,11 @@ if packer ~= nil then
 		use({ "williamboman/mason-lspconfig.nvim" })
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 		use("b0o/schemastore.nvim")
+		use("jayp0521/mason-null-ls.nvim")
+		use("jose-elias-alvarez/typescript.nvim")
 		require("pluginsConf.lsp")
 		use("RRethy/vim-illuminate")
 		require("illuminate").configure({ filetypes_denylist = { "NvimTree", "mason", "packer" } })
-
-		-- autotag
-		use("windwp/nvim-ts-autotag")
 
 		-- Telescope
 		use("nvim-telescope/telescope.nvim")
@@ -133,6 +119,13 @@ if packer ~= nil then
 		})
 		require("pluginsConf.telescope")
 
+		use("rcarriga/nvim-notify")
+		vim.notify = Prequire("notify")
+		require("telescope").load_extension("notify")
+		vim.notify.setup({
+			timeout = 7000,
+		})
+
 		-- Treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -140,12 +133,21 @@ if packer ~= nil then
 		})
 		require("pluginsConf.treesitter")
 		use("nvim-treesitter/nvim-treesitter-context")
+		-- autotag
+		use("windwp/nvim-ts-autotag")
+		use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+		require("pluginsConf.autopairs")
+
+		use("numToStr/Comment.nvim") -- Easily comment stuff
+		use("JoosepAlviste/nvim-ts-context-commentstring")
+		require("pluginsConf.comment")
 
 		-- Git
 		use("lewis6991/gitsigns.nvim")
 		require("pluginsConf.gitsigns")
 
-		use("folke/lua-dev.nvim")
+		use("folke/neodev.nvim")
+		require("neodev").setup({})
 
 		use("NvChad/nvim-colorizer.lua")
 		require("colorizer").setup({

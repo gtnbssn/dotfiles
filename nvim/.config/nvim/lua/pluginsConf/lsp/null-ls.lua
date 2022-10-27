@@ -1,6 +1,10 @@
 local null_ls = Prequire("null-ls")
+local mason_null_ls = Prequire("mason-null-ls")
 
 if null_ls ~= nil then
+	if mason_null_ls ~= nil then
+		mason_null_ls.setup()
+	end
 	-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 	local formatting = null_ls.builtins.formatting
 	-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
