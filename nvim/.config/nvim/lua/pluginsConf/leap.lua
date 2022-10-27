@@ -14,11 +14,13 @@ local setup = {
 	labels = {"s","f","n","j","k","l","o","d","w","e","h","m","v","g","u","t","c",".","z","/","F","L","N","H","G","M","U","T","?","Z" }, ]]
 	special_keys = {
 		repeat_search = "<enter>",
-		next_aot_match = "<enter>",
-		next_match = { ";", "<enter>" },
-		prev_match = { ",", "<tab>" },
-		next_group = "<Tab>",
-		prev_group = "<S-Tab>",
+		next_phase_one_target = "<enter>",
+		next_target = { "<enter>", ";" },
+		prev_target = { "<tab>", "," },
+		next_group = "S-<tab>",
+		prev_group = "<tab>",
+		multi_accept = "<enter>",
+		multi_revert = "<backspace>",
 	},
 }
 
