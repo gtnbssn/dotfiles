@@ -26,6 +26,7 @@ Prequire("nightfox").setup({
 		all = {
 			TelescopePromptBorder = { link = "TelescopeSelection" },
 			TelescopePromptCounter = { link = "TelescopeSelection" },
+      TelescopePromptTitle = { link = "TelescopeSelection" },
 			TelescopeNormal = { bg = "bg0", fg = "fg2" },
 			TelescopePreviewBorder = { bg = "bg0", fg = "fg2" },
 			TelescopeResultsBorder = { bg = "bg0", fg = "fg2" },

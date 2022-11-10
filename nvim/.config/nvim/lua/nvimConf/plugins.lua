@@ -104,9 +104,9 @@ if packer ~= nil then
 		require("mason").setup()
 		use({ "williamboman/mason-lspconfig.nvim" })
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-		use("b0o/schemastore.nvim")
 		use("jayp0521/mason-null-ls.nvim")
 		use("jose-elias-alvarez/typescript.nvim")
+		use("b0o/schemastore.nvim")
 		require("pluginsConf.lsp")
 		use("RRethy/vim-illuminate")
 		require("illuminate").configure({ filetypes_denylist = { "NvimTree", "mason", "packer" } })
@@ -123,8 +123,13 @@ if packer ~= nil then
 		vim.notify = Prequire("notify")
 		require("telescope").load_extension("notify")
 		vim.notify.setup({
-			timeout = 7000,
+			timeout = 5000,
+      max_width = 70,
 		})
+
+		use("numToStr/Comment.nvim") -- Easily comment stuff
+		use("JoosepAlviste/nvim-ts-context-commentstring")
+		require("pluginsConf.comment")
 
 		-- Treesitter
 		use({
@@ -137,10 +142,6 @@ if packer ~= nil then
 		use("windwp/nvim-ts-autotag")
 		use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 		require("pluginsConf.autopairs")
-
-		use("numToStr/Comment.nvim") -- Easily comment stuff
-		use("JoosepAlviste/nvim-ts-context-commentstring")
-		require("pluginsConf.comment")
 
 		-- Git
 		use("lewis6991/gitsigns.nvim")

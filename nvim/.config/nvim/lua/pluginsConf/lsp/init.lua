@@ -101,10 +101,7 @@ if lspconfig ~= nil then
 		end
 		if server == "tsserver" then
 			Prequire("typescript").setup({
-				server = {
-					capabilities = capabilities,
-					on_attach = on_attach,
-				},
+				server = opts
 			})
 		else
 			lspconfig[server].setup(opts)

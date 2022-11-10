@@ -13,14 +13,18 @@ if null_ls ~= nil then
 	null_ls.setup({
 		debug = false,
 		sources = {
-			formatting.prettier.with({
+			formatting.prettierd.with({
 				prefer_local = "node_modules/.bin",
 			}),
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.stylua,
 			formatting.shfmt,
 			diagnostics.flake8,
-			-- diagnostics.eslint,
+			diagnostics.eslint_d.with({
+				condition = function(utils)
+					return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
+				end,
+			}),
 		},
 	})
 end
