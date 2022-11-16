@@ -44,11 +44,6 @@ if packer ~= nil then
 
 		-- Colorschemes
 		use("EdenEast/nightfox.nvim")
-		use({
-			"rose-pine/neovim",
-			as = "rose-pine",
-			tag = "v1.*",
-		})
 		require("pluginsConf.colorscheme")
 
 		use("kyazdani42/nvim-web-devicons")
