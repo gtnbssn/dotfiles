@@ -21,12 +21,12 @@
     DiagnosticSignInfo = { bg = "#282828", fg = "#98971a" },
   },
 }) ]]
-Prequire("nightfox").setup({
+local terafox = Prequire("nightfox").setup({
 	groups = {
 		all = {
 			TelescopePromptBorder = { link = "TelescopeSelection" },
 			TelescopePromptCounter = { link = "TelescopeSelection" },
-      TelescopePromptTitle = { link = "TelescopeSelection" },
+			TelescopePromptTitle = { link = "TelescopeSelection" },
 			TelescopeNormal = { bg = "bg0", fg = "fg2" },
 			TelescopePreviewBorder = { bg = "bg0", fg = "fg2" },
 			TelescopeResultsBorder = { bg = "bg0", fg = "fg2" },
@@ -34,4 +34,7 @@ Prequire("nightfox").setup({
 		},
 	},
 })
-vim.cmd("colorscheme terafox")
+
+if terafox ~= nil then
+	vim.cmd("colorscheme terafox")
+end
