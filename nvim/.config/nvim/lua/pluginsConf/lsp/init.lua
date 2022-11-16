@@ -48,7 +48,21 @@ local config = {
 
 vim.diagnostic.config(config)
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+local function cleanhover(_, result, ctx, cleanhoverconfig)
+  config = cleanhoverconfig or {}
+  config.focus_id = ctx.method
+  if not (result and result.contents) then
+    return
+  end
+  local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+  markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
+  if vim.tbl_isempty(markdown_lines) then
+    return
+  end
+  return vim.lsp.util.open_floating_preview(markdown_lines, 'markdown', config)
+end
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(cleanhover, {
 	border = "solid",
 	width = 70,
 })

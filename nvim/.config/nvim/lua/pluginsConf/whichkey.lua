@@ -91,6 +91,7 @@ local mappings = {
 		"Find files",
 	},
 	["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+  ["x"] = { "<cmd>lua require 'notify'.dismiss()<CR>", "Close all notifications"},
 	--  ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	["z"] = { "<cmd>ZenMode<CR>", "zen mode" },
 
@@ -132,7 +133,7 @@ local mappings = {
 			"<cmd>Telescope diagnostics<cr>",
 			"Telescope Diagnostics",
 		},
-		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
+		f = { "<cmd>lua vim.lsp.buf.format({ timeout = 2000 })<cr>", "Format" },
 		j = {
 			"<cmd>lua vim.diagnostic.goto_next()<CR>",
 			"Next Diagnostic",
