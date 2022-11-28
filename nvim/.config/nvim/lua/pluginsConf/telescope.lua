@@ -1,6 +1,7 @@
 local telescope = Prequire("telescope")
 
 if telescope ~= nil then
+	telescope.load_extension("notify")
 	local actions = require("telescope.actions")
 
 	telescope.setup({

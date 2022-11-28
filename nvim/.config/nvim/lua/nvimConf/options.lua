@@ -47,4 +47,4 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.g.python3_host_prog = '/home/gtnbssn/.pyenv/shims/python'
+vim.g.python3_host_prog = "/home/gtnbssn/.pyenv/shims/python"

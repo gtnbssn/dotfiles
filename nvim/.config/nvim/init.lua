@@ -11,15 +11,7 @@ _G.__luacache_config = {
 	},
 }
 
-function Prequire(package)
-	local status, lib = pcall(require, package)
-	if status then
-		return lib
-	else
-		vim.notify("Failed to require '" .. package .. "' from " .. debug.getinfo(2).source)
-		return nil
-	end
-end
+Prequire = require("nvimutils").Prequire
 
 Prequire("impatient")
 
@@ -27,3 +19,24 @@ require("nvimConf.options")
 require("nvimConf.keymaps")
 require("nvimConf.autocommands")
 require("nvimConf.plugins")
+-- plugins
+require("pluginsConf.colorscheme")
+require("pluginsConf.nvim-tree")
+require("pluginsConf.lualine")
+require("pluginsConf.indentline")
+require("pluginsConf.whichkey")
+require("pluginsConf.zenmode")
+require("pluginsConf.leap")
+require("pluginsConf.cmp")
+require("pluginsConf.mason")
+require("pluginsConf.lsp")
+require("pluginsConf.illuminate")
+require("pluginsConf.telescope")
+require("pluginsConf.notify")
+require("pluginsConf.comment")
+require("pluginsConf.treesitter")
+require("pluginsConf.autopairs")
+require("pluginsConf.gitsigns")
+require("pluginsConf.neodev")
+require("pluginsConf.colorizer")
+require("pluginsConf.scnvim")

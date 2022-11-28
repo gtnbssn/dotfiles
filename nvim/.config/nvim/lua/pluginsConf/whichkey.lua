@@ -91,7 +91,7 @@ local mappings = {
 		"Find files",
 	},
 	["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-  ["x"] = { "<cmd>lua require 'notify'.dismiss()<CR>", "Close all notifications"},
+	["x"] = { "<cmd>lua require 'notify'.dismiss()<CR>", "Close all notifications" },
 	--  ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	["z"] = { "<cmd>ZenMode<CR>", "zen mode" },
 

@@ -44,40 +44,26 @@ if packer ~= nil then
 
 		-- Colorschemes
 		use("EdenEast/nightfox.nvim")
-		require("pluginsConf.colorscheme")
+		use("olimorris/onedarkpro.nvim")
+		use("ellisonleao/gruvbox.nvim")
 
 		use("kyazdani42/nvim-web-devicons")
 
 		use("kyazdani42/nvim-tree.lua")
-		require("pluginsConf.nvim-tree")
 
 		use("moll/vim-bbye")
 
 		use("nvim-lualine/lualine.nvim")
-		require("pluginsConf.lualine")
 
 		use("lukas-reineke/indent-blankline.nvim")
-		require("pluginsConf.indentline")
 
 		use("folke/which-key.nvim")
-		require("pluginsConf.whichkey")
 
-		use({
-			"folke/zen-mode.nvim",
-			config = function()
-				Prequire("zen-mode").setup({
-					window = {
-						backdrop = 1.0,
-						width = 100,
-					},
-				})
-			end,
-		})
+		use("folke/zen-mode.nvim")
 
 		use("ggandor/leap.nvim")
-		require("pluginsConf.leap")
 
-		-- needed for lightspeed otherwise errors on dot repeat after a ct
+		-- needed for leap otherwise errors on dot repeat after a ct
 		use("tpope/vim-repeat")
 
 		-- cmp plugins
@@ -91,20 +77,15 @@ if packer ~= nil then
 		use("L3MON4D3/LuaSnip") --snippet engine
 		use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
-		require("pluginsConf.cmp")
-
 		-- LSP
 		use("neovim/nvim-lspconfig") -- enable LSP
 		use({ "williamboman/mason.nvim" })
-		require("mason").setup()
 		use({ "williamboman/mason-lspconfig.nvim" })
 		use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 		use("jayp0521/mason-null-ls.nvim")
 		use("jose-elias-alvarez/typescript.nvim")
 		use("b0o/schemastore.nvim")
-		require("pluginsConf.lsp")
 		use("RRethy/vim-illuminate")
-		require("illuminate").configure({ filetypes_denylist = { "NvimTree", "mason", "packer" } })
 
 		-- Telescope
 		use("nvim-telescope/telescope.nvim")
@@ -112,51 +93,31 @@ if packer ~= nil then
 			"nvim-telescope/telescope-fzf-native.nvim",
 			run = "make",
 		})
-		require("pluginsConf.telescope")
 
 		use("rcarriga/nvim-notify")
-		vim.notify = Prequire("notify")
-		require("telescope").load_extension("notify")
-		vim.notify.setup({
-			timeout = 5000,
-      max_width = 70,
-		})
 
 		use("numToStr/Comment.nvim") -- Easily comment stuff
 		use("JoosepAlviste/nvim-ts-context-commentstring")
-		require("pluginsConf.comment")
 
 		-- Treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
 		})
-		require("pluginsConf.treesitter")
 		use("nvim-treesitter/nvim-treesitter-context")
 		-- autotag
 		use("windwp/nvim-ts-autotag")
 		use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-		require("pluginsConf.autopairs")
 
 		-- Git
 		use("lewis6991/gitsigns.nvim")
-		require("pluginsConf.gitsigns")
 
 		use("folke/neodev.nvim")
-		require("neodev").setup({})
 
 		use("NvChad/nvim-colorizer.lua")
-		require("colorizer").setup({
-			filetypes = { "*", "!help", "!NvimTree", "!packer", "!mason" },
-			user_default_options = { mode = "virtualtext" },
-		})
 
 		-- scnvim
-		use({
-			"davidgranstrom/scnvim",
-			run = ":call scnvim#install()",
-		})
-		require("pluginsConf.scnvim")
+		use("davidgranstrom/scnvim")
 		-- TODO 'quangnguyen30192/cmp-nvim-tags' for supercollider autocomplete ?
 
 		-- Automatically set up your configuration after cloning packer.nvim
