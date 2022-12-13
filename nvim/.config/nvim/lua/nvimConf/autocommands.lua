@@ -27,7 +27,13 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 vim.api.nvim_create_augroup("cursorLine", { clear = true })
 vim.api.nvim_create_autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
 	callback = function()
-		vim.opt_local.cursorline = true
+		vim.schedule(function()
+			if vim.bo.filetype == "TelescopePrompt" then
+				vim.opt_local.cursorline = false
+			else
+				vim.opt_local.cursorline = true
+			end
+		end)
 	end,
 	group = "cursorLine",
 })
