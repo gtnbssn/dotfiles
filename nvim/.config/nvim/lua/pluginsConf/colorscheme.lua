@@ -51,7 +51,6 @@ if onedark ~= nil then
 				fg = "${telescope_prompt}",
 				bg = "${purple}",
 			},
-
 			TelescopePreviewTitle = {
 				fg = "${telescope_results}",
 				bg = "${green}",
@@ -65,6 +64,7 @@ if onedark ~= nil then
 			TelescopeNormal = { bg = "${telescope_results}" },
 			TelescopeSelection = { bg = "${telescope_prompt}" },
       CursorLine = { bg = "${telescope_results}" },
+      PmenuSel = { bg = "${telescope_results}" },
 		},
 	})
 end
