@@ -19,17 +19,17 @@ end
 local onedark = Prequire("onedarkpro")
 
 if onedark ~= nil then
-	local color = require("onedarkpro.lib.color")
-	local gray = color.lighten("#000000", 0.1, "#1b1b1b")
+	local color = require("onedarkpro.helpers")
+	local gray = color.lighten("#000000", 10)
 	onedark.setup({
 		colors = {
 			onedark_dark = {
-				telescope_results = color.lighten(onedark.get_colors("onedark").bg, 0.99),
-				telescope_prompt = color.darken(onedark.get_colors("onedark").bg, 0.05),
+				telescope_results = color.lighten(color.get_colors("onedark").bg, 1),
+				telescope_prompt = color.darken(color.get_colors("onedark").bg, 50),
 			},
 			onelight = {
-				telescope_prompt = color.darken(onedark.get_colors("onelight").bg, 0.98),
-				telescope_results = color.darken(onedark.get_colors("onelight").bg, 0.95),
+				telescope_prompt = color.darken(color.get_colors("onelight").bg, 0.98),
+				telescope_results = color.darken(color.get_colors("onelight").bg, 0.95),
 			},
 		},
 		highlights = {

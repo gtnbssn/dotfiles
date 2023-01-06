@@ -25,6 +25,6 @@ local setup = {
 }
 
 if leap ~= nil then
-	leap.set_default_keymaps()
+	leap.add_default_mappings()
 	leap.setup(setup)
 end
